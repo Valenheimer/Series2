@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="english">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FROM</title>
     <link rel="icon" href="fn.png">
+    <script>
+        function saveEdits() {
+            var editElem = document.getElementById("edit");
+
+            var userVarsion = editElem.innerHTML;
+            localStorage.userEdits = userVarsion;
+            document.getElementById("update").innerHTML = "EDIT SAVED"
+        }
+    </script>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -108,7 +117,7 @@
     <div class="gird">
         <div class="from">
             <img src="From-Harold-Boyd-Stevens-Blazer-3.jpg" alt="">
-            <div class="character-details">
+            <div class="character-details" id="edit" contenteditable="true">
                 <h1>Boyd Stevens</h1>
                 <p>Boyd Stevens assumes the role 
                     of both Sheriff and de-facto Mayor 
@@ -119,8 +128,11 @@
                     safe despite the escalating horrors and 
                     turmoil befalling its residents.
                 </p>
+                <input type="button" value="save my edits" onclick="saveits()">
+
             </div>
         </div>
+       
 
         <div class="from">
             <img src="rud.jpeg" alt="">
